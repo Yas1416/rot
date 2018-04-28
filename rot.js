@@ -1,3 +1,4 @@
+روتيشن
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -40,7 +41,9 @@ public static void main(String[] args) {
         });                    
     }
     
-    
+    --------------------------------------------------------
+     
+    انميشن 
     
     import javax.swing.*;
 import java.awt.*;
@@ -111,6 +114,11 @@ public class Animation {
  }
  }
 
+
+---------------------------------------------
+ 
+ 
+ 
 import java.awt.*;
 import java.awt.geom.*;
 public class ArcExampleColour extends Frame{
@@ -157,6 +165,10 @@ public class MyFinishWindow extends WindowAdapter{
  System.exit(0);
  }
 }
+
+
+----------------------------------------------------------------------------------------
+ 
 import java.awt.*;
 import java.awt.geom.*;
 public class AreaExample extends Frame{
