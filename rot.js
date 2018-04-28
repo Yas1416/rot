@@ -174,55 +174,39 @@ import java.awt.geom.*;
 public class AreaExample extends Frame{
  AreaExample()
  {
- //Enables the closing of the window
  addWindowListener(new MyFinishWindow());
  }
 public void paint(Graphics g)
  {
  Graphics2D g2d = (Graphics2D) g;
- //Use of antialiasing to have nicer lines
+
 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS
 _ON);
- //Radius of the circle
+ 
  int radius = 50;
- //Position of the circle
  int startx = 100;
  int starty = 100;
- //Size of the rectangle
  int width = 70;
  int height = 100;
- //Positioning of the rectangle relative to the circle
  int rectshiftx = -10;
  int rectshifty = 10;
- //Translation of the rectangle and the circle to the right,
- //when one of the set-theoretic operations is carried out.
  int xshift = 140;
- //Union: add
- //Generate a circle and a rectangle.
  Ellipse2D.Double circle1 = circleDouble(startx,starty,radius);
  Rectangle2D.Double rect1 = new Rectangle2D.Double(startx+rectshiftx,
  starty+rectshifty, wid
  g2d.fill(c2);
- //Difference
-//Generate a circle and a rectangle (shifted to the right).
  Ellipse2D.Double circle3 = circleDouble(startx+2*xshift,starty,radius);
  Rectangle2D.Double rect3 = new Rectangle2D.Double(startx+rectshiftx+2*xshift,
  starty+rectshifty, width, height);
-//Change the circle and the rectangle into Area objects.
  Area c3 = new Area(circle3);
  Area r3 = new Area(rect3);
- //Compute their difference.
  c3.subtract(r3);
  g2d.fill(c3);
- //Symmetric difference: XOR
- //Generate a circle and a rectangle (shifted to the right).
  Ellipse2D.Double circle4 = circleDouble(startx+3*xshift,starty,radius);
  Rectangle2D.Double rect4 = new Rectangle2D.Double(startx+rectshiftx+3*xshift,
  starty+rectshifty, width, height);
-//Change the circle and the rectangle into Area objects.
  Area c4 = new Area(circle4);
  Area r4 = new Area(rect4);
- //Compute their symmetric difference.
  c4.exclusiveOr(r4);
  g2d.fill(c4);
  }
